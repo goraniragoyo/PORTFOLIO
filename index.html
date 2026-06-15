@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>정유찬 포트폴리오</title>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/gallery.css">
 </head>
 <body>
 
@@ -142,8 +144,8 @@
         </article>
         <article class="project-card">
           <img src="images/project2.png" alt="AI 컴퓨터 게임">
-          <h3>AI 컴퓨터 게임</h3>
-          <p>AI 배틀그라운드, 피파 등 게임들로 취미생활 진행</p>
+          <h3>컴퓨터 게임</h3>
+          <p>배틀그라운드, 피파 등 게임들로 취미생활 진행</p>
         </article>
         <article class="project-card">
           <img src="images/project3.png" alt="군필 출신">
@@ -154,19 +156,31 @@
     </div>
   </section>
 
-  <section id="gallery" class="section gallery">
-    <div class="section-inner">
-      <h2>GALLERY</h2>
-      <div class="gallery-grid">
-        <img src="images/gallery1.png" alt="갤러리 이미지 1">
-        <img src="images/gallery2.png" alt="갤러리 이미지 2">
-        <img src="images/gallery3.png" alt="갤러리 이미지 3">
-        <img src="images/gallery4.png" alt="갤러리 이미지 4">
-        <img src="images/gallery5.png" alt="갤러리 이미지 5">
-        <img src="images/gallery6.png" alt="갤러리 이미지 6">
+  <section class="gallery-board">
+      <div class="container">
+        <div class="filter-buttons">
+          <button type="button" class="active" data-filter="all">전체</button>
+          <button type="button" data-filter="education">교육</button>
+          <button type="button" data-filter="community">지역사회</button>
+          <button type="button" data-filter="politics">정치</button>
+          <button type="button" data-filter="event">행사</button>
+        </div>
+
+        <div id="galleryList" class="gallery-list"></div>
+      </div>
+    </section>
+  </main>
+
+  <div id="modal" class="modal" aria-hidden="true">
+    <button type="button" id="modalClose" class="modal-close">×</button>
+    <div class="modal-content">
+      <img id="modalImage" src="" alt="">
+      <div class="modal-text">
+        <h3 id="modalTitle"></h3>
+        <p id="modalDesc"></p>
       </div>
     </div>
-  </section>
+  </div>
 
   <section id="contact" class="section contact">
     <div class="section-inner">
@@ -180,6 +194,9 @@
       </div>
     </div>
   </section>
+
+  <script src="js/gallery-data.js"></script>
+  <script src="js/gallery.js"></script>
 
   <footer class="footer">
     <p>© 2026 Jeong Yoochan Portfolio. All Rights Reserved.</p>
